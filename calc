@@ -1,0 +1,68 @@
+#include<stdio.h>
+float add(float x,float y){
+    float z=x+y;
+    return z;
+}
+float sub(float x,float y){
+    float z=x-y;
+    return z;
+}
+float mul(float x,float y){
+    if(x==0||y==0){
+        printf("YOU HAVE ENTERED 0 VALUE SO ENTER A NON ZERO VALUE");
+        scanf("%f %f",&x,&y);
+        return x*y;
+    }
+    else{
+    float z=x*y;
+    return z;
+}
+}
+float div(float x,float y){
+    if(y==0){
+        printf("CANNOT DIVIDE BY 0,ENTER A NON-ZERO NUMBER: ");
+        scanf("%f",&y);
+        float r=x/y;
+        return r;
+    }
+    else{
+        float z=x/y;
+        return z;
+}
+}
+int main()
+{
+    float a,b;
+    int choice;
+    printf("CALCULATOR");
+    printf("\n1.ADDITION\n2.SUBTRACTION\n3.MULTIPLICATION\n4.DIVISION");
+    printf("\nENTER THE CHOICE: ");
+    scanf("%d",&choice);
+    printf("ENTER NUMBER 1: ");
+    scanf("%f",&a);
+    printf("ENTER NUMBER 2: ");
+    scanf("%f",&b);
+    switch(choice){
+        case 1:{
+            printf("THE ADDITION OF TWO NUMBERS IS: %f",add(a,b));
+            break;
+        }
+        case 2:{
+            printf("THE DIFFERENCE OF TWO NUMBERS IS: %f",sub(a,b));
+            break;
+        }
+        case 3:{
+            printf("THE PRODUCT OF TWO NUMBERS IS: %f",mul(a,b));
+            break;
+        }
+        case 4:{
+            printf("THE DIVISION OF TWO NUMBERS IS: %f",div(a,b));
+            break;
+        }
+        default:{
+            printf("ENTER A VALID CHOICE");
+            scanf("%d",&choice);
+        }
+    }
+    return 0;
+}
